@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import {FiCoffee, FiSearch} from 'react-icons/fi'
 
 function Navigation() {
   return (
-    <div className='Navigation'>
+    <Nav className='Navigation'>
         <div className='Logo'>
-            <i></i>
+            <FiCoffee />
             <h1>Foodie</h1>
         </div>
 
@@ -18,16 +19,19 @@ function Navigation() {
         </ul>
 
         <div>
-            <i></i>
+            <FiSearch />
             <input type="text" placeholder='Search' ></input>
         </div>
         
-    </div>
+    </Nav>
   )
 }
 
-const Nav = styled.div `
-
-`
+const Nav = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+`;
 
 export default Navigation
