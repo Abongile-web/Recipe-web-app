@@ -1,21 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 import {FiCoffee, FiSearch} from 'react-icons/fi'
+import {NavLink} from 'react-router-dom';
 
 function Navigation() {
   return (
     <Nav className='Navigation'>
         <div className='Logo'>
             <FiCoffee />
-            <h1>Foodie</h1>
+            <NavLink to={'/'}>Foodie</NavLink>
         </div>
 
         <ul>
-            <li>Pasta</li>
-            <li>Pizza</li>
-            <li>Salads</li>
-            <li>Dessert</li>
-            <li>Fruit</li>
+            <NavLink to={'Food/Pasta'}>Pasta</NavLink>
+            <NavLink to={'Food/Pizza'}>Pizza</NavLink>
+            <NavLink to={'Food/Salads'}>Salads</NavLink>
+            <NavLink to={'Food/Dessert'}>Dessert</NavLink>
+            <NavLink to={'Food/Fruit'}>Fruit</NavLink>
         </ul>
 
         <div className='search'>
@@ -44,8 +45,10 @@ const Nav = styled.div`
             margin: 0 0.2rem;
         }
 
-        h1 {
+        a {
             font-size: 24px;
+            text-decoration: none;
+            color: white;
         }
     }
 
@@ -53,12 +56,14 @@ const Nav = styled.div`
         display: flex;
         align-items: center;
 
-        li {
+        a {
             margin: 1rem;
             list-style: none;
             cursor: pointer;
             font-weight: bolder;
             font-size: 20px;
+            text-decoration: none;
+            color: white;
         }
     }
 
