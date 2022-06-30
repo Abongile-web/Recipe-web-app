@@ -12,11 +12,11 @@ function Navigation() {
         </div>
 
         <ul>
-            <NavLink to={'Food/Pasta'}>Pasta</NavLink>
-            <NavLink to={'Food/Pizza'}>Pizza</NavLink>
-            <NavLink to={'Food/Salads'}>Salads</NavLink>
-            <NavLink to={'Food/Dessert'}>Dessert</NavLink>
-            <NavLink to={'Food/Fruit'}>Fruit</NavLink>
+            <NavLink to={'/pasta'}>Pasta</NavLink>
+            <NavLink to={'/pizza'}>Pizza</NavLink>
+            <NavLink to={'/salads'}>Salads</NavLink>
+            <NavLink to={'/dessert'}>Dessert</NavLink>
+            <NavLink to={'/fruit'}>Fruit</NavLink>
         </ul>
 
         <div className='search'>

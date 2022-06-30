@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 function Trending() {
 
@@ -34,19 +35,30 @@ function Trending() {
     <div>
         <Heading>Trending</Heading>
 
+        
         <ImageCard>
+        <Splide options={{
+            perPage: 4,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "0rem",
+        }}>
             {trending.map((recipe) => {
                 return(
-                    <Card key={recipe.id}>
-                        <div>
-                        <img src={recipe.image} alt={recipe.title} />
-                        <h1>{recipe.title}</h1>
-                        </div>
-                    </Card>
+                    <SplideSlide key={recipe.id}>
+                        <Card >
+                            <div>
+                            <img src={recipe.image} alt={recipe.title} />
+                            <h1>{recipe.title}</h1>
+                            </div>
+                        </Card>
+                    </SplideSlide>
                 );
             })} 
-
+            </Splide>
         </ImageCard>
+        
     </div>
   )
 }
@@ -57,17 +69,23 @@ const Heading = styled.h1`
 `
 
 const ImageCard = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    /* grid-template-columns: auto auto auto auto; */
     padding: 1rem 6rem;
+    /* overflow: hidden; */
+
+    .splide {
+        width: 100%;
+    }
     
 `;
 
 const Card = styled.div`
     padding: 5px;
+    /* overflow: hidden; */
     
     div {
-        /* width: 20vw; */
+        width: 20vw;
         height: 350px;
         position: relative;
         border-radius: 10px;

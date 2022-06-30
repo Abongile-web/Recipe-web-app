@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 function Menu() {
 
@@ -11,7 +13,7 @@ function Menu() {
 
     const getMenu = async ()=> {
         
-        // //see if trending is saved in local storage 
+        //see if trending is saved in local storage 
         const check = localStorage.getItem('menu');
 
         if (check) {
@@ -34,17 +36,26 @@ function Menu() {
                 <Heading>Italian</Heading>
 
 <ImageCard>
+    <Splide options={{
+            perPage: 4,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "0rem",
+        }}>
     {menu.map((result) => {
         return(
-            <Card key={result.id}>
-                <div>
-                <img src={result.image} alt={result.title} />
-                <h1>{result.title}</h1>
-                </div>
-            </Card>
+            <SplideSlide key={result.id}>
+                <Card >
+                    <div>
+                    <img src={result.image} alt={result.title} />
+                    <h1>{result.title}</h1>
+                    </div>
+                </Card>
+            </SplideSlide>
         );
     })}
-
+    </Splide>
 </ImageCard>
     </div>
   )
@@ -56,9 +67,13 @@ const Heading = styled.h1`
 `
 
 const ImageCard = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    /* grid-template-columns: auto auto auto auto; */
     padding: 1rem 6rem;
+
+    .splide {
+        width: 100%;
+    }
     
 `;
 
@@ -66,7 +81,7 @@ const Card = styled.div`
     padding: 5px;
     
     div {
-        /* width: 20vw; */
+        width: 20vw;
         height: 350px;
         position: relative;
         border-radius: 10px;
