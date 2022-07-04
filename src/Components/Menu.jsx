@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { Link } from 'react-router-dom';
 
 function Menu() {
 
@@ -47,10 +48,12 @@ function Menu() {
         return(
             <SplideSlide key={result.id}>
                 <Card >
-                    <div>
-                    <img src={result.image} alt={result.title} />
-                    <h1>{result.title}</h1>
-                    </div>
+                    <Link to={"/recipe/" + result.id}>
+                        <div>
+                        <img src={result.image} alt={result.title} />
+                        <h1>{result.title}</h1>
+                        </div>
+                    </Link>
                 </Card>
             </SplideSlide>
         );

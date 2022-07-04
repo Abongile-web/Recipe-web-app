@@ -1,55 +1,55 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import {useParams} from 'react-router-dom'
+import styled from 'styled-components'
 
-function Pizza() {
+function Searched() {
 
-  const [pizza, setPizza] = useState([])
+  const [search, setSearch] = useState([])
+  let params = useParams()
 
-  useEffect(()=> {
-    getPizza();
-  }, [])
-
-  const getPizza = async ()=> {
+  const getSearch = async (name)=> {
 
      //see if trending is saved in local storage 
-     const check = localStorage.getItem('pizza');
+    //  const check = localStorage.getItem('search');
 
-     if (check) {
-         setPizza(JSON.parse(check));
+    //  if (check) {
+    //      setSearch(JSON.parse(check));
 
-         console.log(pizza)
-     }
-     else {
+    //      console.log(search)
+    //  }
+    //  else {
 
-    const api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=pizza&number=24`)
+    const api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=24`)
 
     const data = await api.json();
 
-    localStorage.setItem('pizza', JSON.stringify(data.results));
+    // localStorage.setItem('search', JSON.stringify(data.results));
 
-    setPizza(data.results)
+    setSearch(data.results)
 
-    console.log(pizza)
+    console.log(search)
 
-     }
+    //  }
   }
+
+  useEffect(()=> {
+    getSearch(params.search);
+  }, [params.search])
+
   return (
     <div>
       <Heading>
-        Pizza meals
+        Searched results:
       </Heading>
 
     <ImageCard>
-      {pizza.map((result)=> {
+      {search.map((result)=> {
         return(
           <Card key={result.id}>
-            <Link to={"/recipe/" + result.id}>
             <div>
               <img src={result.image} alt={result.title}/>
               <h1>{result.title}</h1>
             </div>
-            </Link>
           </Card>
         )
       })}
@@ -101,4 +101,4 @@ const Card = styled.div`
     }
 `;
 
-export default Pizza
+export default Searched

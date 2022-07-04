@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { Link } from 'react-router-dom';
 
 function Trending() {
 
@@ -48,10 +49,12 @@ function Trending() {
                 return(
                     <SplideSlide key={recipe.id}>
                         <Card >
-                            <div>
-                            <img src={recipe.image} alt={recipe.title} />
-                            <h1>{recipe.title}</h1>
-                            </div>
+                            <Link to={"/recipe/" + recipe.id}>
+                                <div>
+                                <img src={recipe.image} alt={recipe.title} />
+                                <h1>{recipe.title}</h1>
+                                </div>
+                            </Link>
                         </Card>
                     </SplideSlide>
                 );

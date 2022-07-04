@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import {FiCoffee, FiSearch} from 'react-icons/fi'
-import {NavLink} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 
 function Navigation() {
+
+    const [input, setInput] = useState('')
+    const navigate = useNavigate()
+
+    const search = (e)=> {
+        e.preventDefault();
+        navigate('/searched/' + input)
+    }
+
+
   return (
     <Nav className='Navigation'>
         <div className='Logo'>
@@ -20,8 +30,10 @@ function Navigation() {
         </ul>
 
         <div className='search'>
-            <FiSearch />
-            <input type="text" placeholder='Search' ></input>
+            <form onSubmit={search}>
+                <FiSearch />
+                <input type="text" placeholder='Search' onChange={(e)=>{setInput(e.target.value)}} value={input} ></input>
+            </form>
         </div>
         
     </Nav>
@@ -68,21 +80,24 @@ const Nav = styled.div`
     }
 
     .search {
-        display: flex;
-        align-items: center;
-        background-color: white;
-        padding: 0.3rem;
-        border-radius: 10px;
+        form {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 0.3rem;
+            border-radius: 10px;
 
         svg {
             color: black;
             font-size: 20px;
             padding-right: 0.2rem;
+            padding: 3px;
         }
 
         input {
             border: none;
             outline: none;
+        }
         }
     }
 `;

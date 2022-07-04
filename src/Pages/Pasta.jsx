@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 function Pasta() {
 
@@ -45,10 +46,12 @@ function Pasta() {
       {pasta.map((result)=> {
         return(
           <Card key={result.id}>
-            <div>
-              <img src={result.image} alt={result.title}/>
-              <h1>{result.title}</h1>
-            </div>
+            <Link to={"/recipe/" + result.id}>
+              <div>
+                <img src={result.image} alt={result.title}/>
+                <h1>{result.title}</h1>
+              </div>
+            </Link>
           </Card>
         )
       })}
