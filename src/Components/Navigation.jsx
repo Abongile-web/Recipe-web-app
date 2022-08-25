@@ -47,6 +47,8 @@ const Nav = styled.div`
     padding: 0.5rem 2rem;
     background-color: #FF0022;
     color: white;
+    min-height: 5vh;
+    width: 100vw;
 
     .Logo {
         display: flex;
@@ -99,6 +101,25 @@ const Nav = styled.div`
             outline: none;
         }
         }
+    }
+
+    @media screen and (max-width: 768px){
+        padding: 0rem 0.2rem;
+
+        ul {
+            display: none;
+        }
+
+        .search {
+        form {
+            padding: 0.2rem;
+
+        input {
+            width: 150px;
+        }
+        }
+    }
+        
     }
 `;
 

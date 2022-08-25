@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 function Salads() {
 
@@ -43,10 +44,12 @@ function Salads() {
       {salad.map((result)=> {
         return(
           <Card key={result.id}>
+            <Link to={"/recipe/" + result.id}>
             <div>
               <img src={result.image} alt={result.title}/>
               <h1>{result.title}</h1>
             </div>
+            </Link>
           </Card>
         )
       })}
