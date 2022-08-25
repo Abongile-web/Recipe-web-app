@@ -17,7 +17,7 @@ function App() {
         <Navigation />
 
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="Recipe-web-app/" element={<Home />}/>
           <Route path="/pasta" element={<Pasta />} />
           <Route path="/pizza" element={<Pizza />} />
           <Route path="/salads" element={<Salads />} />
