@@ -104,7 +104,7 @@ const Nav = styled.div`
     }
 
     @media screen and (max-width: 768px){
-        padding: 0rem 0.2rem;
+        padding: 0.5rem 0.5rem;
 
         ul {
             display: none;

@@ -44,6 +44,11 @@ function Trending() {
             pagination: false,
             drag: "free",
             gap: "0rem",
+            breakpoints: {
+                768: {
+                    perPage: 2,
+                }
+            }
         }}>
             {trending.map((recipe) => {
                 return(
@@ -69,6 +74,10 @@ function Trending() {
 const Heading = styled.h1`
     padding: 2rem 2rem 0 6rem;
     font-size: 50px;
+
+    @media screen and (max-width: 768px){
+        padding: 1rem 2rem 0 1rem;
+    }
 `
 
 const ImageCard = styled.div`
@@ -76,6 +85,10 @@ const ImageCard = styled.div`
     /* grid-template-columns: auto auto auto auto; */
     padding: 1rem 6rem;
     /* overflow: hidden; */
+
+    @media screen and (max-width: 768px){
+        padding: 1rem 1rem;
+    }
 
     .splide {
         width: 100%;
@@ -93,6 +106,10 @@ const Card = styled.div`
         position: relative;
         border-radius: 10px;
         background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+
+        @media screen and (max-width: 768px){
+            width: 40vw;
+    }
         
         img {
             border-radius: 10px;
