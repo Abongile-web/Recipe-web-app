@@ -177,6 +177,10 @@ const Page = styled.div `
   h1 {
     font-size: 40px;
     padding: 20px 0;
+
+    @media screen and (max-width: 768px) {
+      padding: 5px 0;
+    }
   }
 `
 
@@ -191,12 +195,21 @@ const Summary = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+  }
 `
 
 const Image = styled.div `
 
   margin: 40px 40px 40px 0;
   width: 700px;
+
+  @media screen and (max-width: 768px){
+    margin: 20px 0px 20px 0;
+    width: 90vw;
+  }
 
   img {
     width: 100%
@@ -205,6 +218,10 @@ const Image = styled.div `
 
 const Content = styled.div `
   width: 600px;
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+  }
 `
 
 
@@ -219,6 +236,10 @@ const Headings = styled.div `
     margin-right: 30px;
     cursor: pointer;
     font-size: 32px;
+
+    @media screen and (max-width: 768px){
+      font-size: 22px;
+    }
   }
 
   .active {
