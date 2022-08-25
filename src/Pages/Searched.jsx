@@ -88,7 +88,7 @@ const Card = styled.div`
         background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
 
         @media screen and (max-width: 768px){
-          width: 360px;
+          width: 320px;
         }
         
         img {

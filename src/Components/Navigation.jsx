@@ -18,7 +18,7 @@ function Navigation() {
     <Nav className='Navigation'>
         <div className='Logo'>
             <FiCoffee />
-            <NavLink to={'/'}>Foodie</NavLink>
+            <NavLink to={'Recipe-web-app/'}>Foodie</NavLink>
         </div>
 
         <ul>

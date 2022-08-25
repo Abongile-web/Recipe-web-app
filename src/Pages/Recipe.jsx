@@ -238,7 +238,7 @@ const Headings = styled.div `
     font-size: 32px;
 
     @media screen and (max-width: 768px){
-      font-size: 22px;
+      font-size: 18px;
     }
   }
 
