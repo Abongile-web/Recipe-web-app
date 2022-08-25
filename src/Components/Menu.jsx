@@ -44,6 +44,9 @@ function Menu() {
             drag: "free",
             gap: "0rem",
             breakpoints: {
+                820: {
+                    perPage: 3,
+                },
                 768: {
                     perPage: 2,
                 }
