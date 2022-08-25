@@ -63,6 +63,11 @@ function Searched() {
 const Heading = styled.h1`
   font-size: 50px;
   padding: 40px;
+
+  @media screen and (max-width: 768px){
+    padding: 10px;
+    font-size: 38px;
+  }
 `
 
 const ImageCard = styled.div`
@@ -81,6 +86,10 @@ const Card = styled.div`
         position: relative;
         border-radius: 10px;
         background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+
+        @media screen and (max-width: 768px){
+          width: 360px;
+        }
         
         img {
             border-radius: 10px;
