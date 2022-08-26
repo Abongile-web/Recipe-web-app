@@ -153,7 +153,7 @@ function Recipe() {
 
               <HomeBtn>
                 <IoChevronBackCircleOutline />
-                <NavLink to={'Recipe-web-app/'}>Home</NavLink>
+                <NavLink to={'/Recipe-web-app/'}>Home</NavLink>
               </HomeBtn>
 
             </Content>
